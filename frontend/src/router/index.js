@@ -91,6 +91,12 @@ const router = createRouter({
       component: AdminDocumentRequisView,
       meta: { requiresAuth: true, requiresRole: 'ADMIN', title: 'Gestion des Documents Requis' }
     },
+    {
+      path: '/admin/users',
+      name: 'admin-user-management',
+      component: () => import('@/views/admin/AdminUserManagementView.vue'),
+      meta: { requiresAuth: true, requiresRole: 'ADMIN', title: 'Gestion des Comptes Utilisateurs' }
+    },
 
     // Agent GUC Routes
     {
@@ -231,9 +237,9 @@ router.beforeEach((to, from, next) => {
         next({ path: '/agent_commission/dossiers' });
         break;
       case 'ADMIN':
-        next({ path: '/admin/documents-requis' });
+        next({ path: '/admin/users' });
         break;
-      default:final
+      default:
         next({ name: 'dashboard' });
     }
   }

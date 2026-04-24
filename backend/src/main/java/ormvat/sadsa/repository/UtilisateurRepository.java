@@ -21,4 +21,7 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
     
     // Count commission agents by team
     long countByRoleAndEquipeCommissionAndActifTrue(UserRole role, EquipeCommission equipeCommission);
+
+    long countByActifTrue();
+    long countByActifFalse();
 }

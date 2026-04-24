@@ -281,8 +281,14 @@ const menuItems = computed(() => {
     } else if (role === "ADMIN") {
         items.push(
             {
-                label: "Gestion Dossiers",
-                icon: "pi pi-folder",
+                label: "Gestion Utilisateurs",
+                icon: "pi pi-users",
+                command: () => router.push("/admin/users"),
+                route: "/admin/users",
+            },
+            {
+                label: "Gestion Documents",
+                icon: "pi pi-file-edit",
                 command: () => router.push("/admin/documents-requis"),
                 route: "/admin/documents-requis",
             }

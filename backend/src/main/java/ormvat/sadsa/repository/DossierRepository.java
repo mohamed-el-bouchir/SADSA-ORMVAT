@@ -23,4 +23,6 @@ public interface DossierRepository extends JpaRepository<Dossier, Long> {
     List<Dossier> findByAgriculteurId(Long agriculteurId);
     Optional<Dossier> findByNumeroDossier(String numeroDossier);
     Optional<Dossier> findBySaba(String saba);
+
+    long countByUtilisateurCreateurId(Long utilisateurId);
 }
